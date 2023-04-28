@@ -3,7 +3,10 @@ ARG CHANNEL
 
 FROM lscr.io/linuxserver/homeassistant:${VERSION}
 
-ENV HASS_CONFIG_GIT ""
+ENV HASS_GIT_USER_NAME     "false"
+ENV HASS_GIT_USER_EMAIL    "false"
+ENV HASS_CONFIG_GIT        "false"
+ENV HASS_HACS_INSTALL ""
 
 # install packages
 RUN \
@@ -21,3 +24,7 @@ RUN \
     /tmp/* \
     /root/.cache \
     /root/.cargo
+
+COPY ./apps/home-assistant/entrypoint.sh /entrypoint.sh
+CMD ["/entrypoint.sh"]
+LABEL org.opencontainers.image.source="https://github.com/linuxserver/docker-homeassistant"
