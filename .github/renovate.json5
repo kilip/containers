@@ -8,11 +8,11 @@
     ":automergeDigest"
   ],
   "platform": "github",
-  "username": "olympus.bot[bot]",
+  "username": "olympus-bot[bot]",
   "repositories": ["kilip/containers"],
   "onboarding": false,
   "requireConfig": "optional",
-  "gitAuthor": "olympus.bot <26916054+olympus.bot[bot]@users.noreply.github.com>",
+  "gitAuthor": "olympus-bot <106327410+olympus.bot[bot]@users.noreply.github.com>",
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
   "commitBodyTable": true,
