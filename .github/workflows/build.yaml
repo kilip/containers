@@ -2,6 +2,7 @@
 name: "Action: Image Build"
 
 on:
+  push:
   workflow_call:
     inputs:
       imagesToBuild:
