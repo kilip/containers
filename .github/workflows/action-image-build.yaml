@@ -177,8 +177,10 @@ jobs:
           platforms: ${{ steps.vars.outputs.chan_platforms }}
           file: ${{ steps.vars.outputs.chan_dockerfile }}
           push: ${{ inputs.pushImages == 'true' }}
-          tags: |-
-            ghcr.io/${{ github.repository_owner }}/${{ steps.vars.outputs.chan_tag_rolling }}
+          #tags: |-
+          #  ghcr.io/${{ github.repository_owner }}/${{ steps.vars.outputs.chan_tag_rolling }}
+          #  ghcr.io/${{ github.repository_owner }}/${{ steps.vars.outputs.chan_tag_version }}
+          tags:
             ghcr.io/${{ github.repository_owner }}/${{ steps.vars.outputs.chan_tag_version }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
