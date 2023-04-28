@@ -57,8 +57,8 @@ jobs:
           provenance: true
           push: true
           builder: ${{ steps.buildx.outputs.name }}
-          context: apps/home-assistant
-          file: Dockerfile
+          context: ./apps/home-assistant
+          file: ./apps/home-assistant/Dockerfile
           build-args: |
             REVISION=${{ steps.prep.outputs.REVISION }}
           platforms: linux/amd64,linux/arm64
