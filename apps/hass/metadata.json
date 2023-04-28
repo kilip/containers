@@ -1,5 +1,5 @@
 {
-  "app": "home-assistant",
+  "app": "hass",
   "base": false,
   "channels": [
     {

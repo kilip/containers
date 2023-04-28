@@ -1,4 +1,7 @@
-FROM lscr.io/linuxserver/homeassistant:2023.4.6
+ARG VERSION
+ARG CHANNEL
+
+FROM lscr.io/linuxserver/homeassistant:${VERSION}
 
 ENV HASS_CONFIG_GIT ""
 
