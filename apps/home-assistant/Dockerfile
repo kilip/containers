@@ -14,8 +14,6 @@ RUN \
   apk add --no-cache --virtual=build-dependencies \
     git && \
   echo "**** cleanup ****" && \
-  apk del --purge \
-    build-dependencies && \
   for cleanfiles in *.pyc *.pyo; \
     do \
     find /usr/lib/python3.*  -iname "${cleanfiles}" -exec rm -f '{}' + \
