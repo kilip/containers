@@ -1,7 +1,7 @@
 #!/bin/sh -ex
 
 DIR="$GIT_SYNC_ROOT/$GIT_SYNC_DEST"
-if [ ! -e $DIR ]; then
+if [ ! -f $DIR ]; then
     /git-sync -v=3
 fi
 
