@@ -1,0 +1,6 @@
+---
+file:
+  /do-sync.sh:
+    exists: true
+  /tmp/hass-config/latest/configuration.yaml:
+    exists: true
