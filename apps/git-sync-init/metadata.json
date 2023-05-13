@@ -1,5 +1,5 @@
 {
-  "app": "home-assistant",
+  "app": "git-sync-init",
   "base": false,
   "channels": [
     {
