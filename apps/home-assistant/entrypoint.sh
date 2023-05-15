@@ -3,20 +3,16 @@
 #shellcheck disable=SC1091
 test -f "/scripts/umask.sh" && source "/scripts/umask.sh"
 
-if [[ "${HASS_GIT_USER_NAME}" != "false" ]]; then
-    git config --global user.name ${HASS_GIT_USER_NAME}
-fi
-
-if [[ "${HASS_GIT_USER_EMAIL}" != "false" ]]; then
-    git config --global user.email ${HASS_GIT_USER_EMAIL}
-fi
-
-if [[ "${HASS_CONFIG_GIT}" != "false" ]]; then
-    git clone ${HASS_CONFIG_GIT} /config
-fi
-
-if [[ "${HASS_HACS_INSTALL}" == "true" ]]; then
+if [[ "${HOME_ASSISTANT__HACS_INSTALL}" == "true" ]]; then
     wget -O - https://get.hacs.xyz | bash -
+fi
+
+if [[ "${HASS_USING_GIT_CONFIG}" == "true" ]]; then
+    while [ ! -e /config/configuration.yaml ];
+    do
+        echo "Waiting for home-assistant config arrived at /config/configuration.yaml"
+        sleep 1
+    done
 fi
 
 exec \
