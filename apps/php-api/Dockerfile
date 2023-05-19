@@ -33,7 +33,8 @@ RUN set -eux; \
 	opcache \
   pdo_pgsql \
   pdo_mysql \
-	;
+  xdebug \
+;
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
