@@ -21,10 +21,6 @@ RUN apk add --no-cache \
 	openssh \
 	;
 
-#RUN \
-#    addgroup -S homelab --gid ${PGID} \
-#        && adduser -S homelab -G homelab --uid ${PUID}
-
 RUN set -eux; \
 	install-php-extensions \
 	intl \
@@ -34,6 +30,7 @@ RUN set -eux; \
   pdo_pgsql \
   pdo_mysql \
   xdebug \
+  redis \
 ;
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
