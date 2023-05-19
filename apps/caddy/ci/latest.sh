@@ -3,4 +3,4 @@ version=$(curl -sX GET "https://api.github.com/repos/caddyserver/caddy/releases/
 version="${version#*v}"
 version="${version#*release-}"
 
-printf "%s-alpine" "${version}"
+printf "%s-builder-alpine" "${version}"
