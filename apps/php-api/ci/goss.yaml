@@ -1,0 +1,6 @@
+---
+file:
+  /usr/local/bin/php:
+    exists: true
+  /usr/bin/compose:
+    exists: true
