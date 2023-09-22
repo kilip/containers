@@ -8,10 +8,10 @@
     ":automergeDigest"
   ],
   "platform": "github",
-  "username": "olympus-bot[bot]",
   "repositories": ["kilip/containers"],
   "onboarding": false,
   "requireConfig": "optional",
+  "username": "doyobot[bot]",
   "gitAuthor": "doyobot <132103405+doyobot[bot]@users.noreply.github.com>",
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
