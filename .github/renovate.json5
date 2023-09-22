@@ -12,7 +12,7 @@
   "repositories": ["kilip/containers"],
   "onboarding": false,
   "requireConfig": "optional",
-  "gitAuthor": "olympus-bot <132103405+olympus-bot[bot]@users.noreply.github.com>",
+  "gitAuthor": "doyobot <132103405+doyobot[bot]@users.noreply.github.com>",
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
   "commitBodyTable": true,
