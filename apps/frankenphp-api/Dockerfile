@@ -8,7 +8,7 @@ ARG CHANNEL
 
 
 # Versions
-FROM dunglas/frankenphp:${VERSION}} AS frankenphp_upstream
+FROM dunglas/frankenphp:${VERSION} AS frankenphp_upstream
 
 
 # The different stages of this Dockerfile are meant to be built into separate images
@@ -49,21 +49,3 @@ ENTRYPOINT ["docker-entrypoint"]
 
 HEALTHCHECK --start-period=60s CMD curl -f http://localhost:2019/metrics || exit 1
 CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile" ]
-
-
-# Dev FrankenPHP image
-FROM frankenphp_base AS frankenphp_dev
-
-ENV APP_ENV=dev XDEBUG_MODE=off
-VOLUME /app/var/
-
-RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
-
-RUN set -eux; \
-	install-php-extensions \
-		xdebug \
-	;
-
-COPY --link ./apps/frankenphp-api/conf.d/app.dev.ini $PHP_INI_DIR/conf.d/
-
-CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--watch" ]
