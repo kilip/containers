@@ -1,8 +1,8 @@
 #!/bin/sh
 set -e
 
-if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
-	if [ -z "$(ls -A 'vendor/' 2>/dev/null)" ] && [ -z "$(ls -A . 'composer.json' 2>/dev/null)" ]; then
+if [[ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]] && [ -z "$(ls -A . 'composer.json' 2>/dev/null)" ]; then
+	if [ -z "$(ls -A 'vendor/' 2>/dev/null)" ]; then
 		composer install --prefer-dist --no-progress --no-interaction
 	fi
 
