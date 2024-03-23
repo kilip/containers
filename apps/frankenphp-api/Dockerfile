@@ -60,7 +60,7 @@ RUN set -eux; \
 		xdebug \
 	;
 
-COPY --link frankenphp/conf.d/app.dev.ini $PHP_INI_DIR/conf.d/
+COPY --link ./apps/frankenphp-api/conf.d/app.dev.ini $PHP_INI_DIR/conf.d/
 
 CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--watch" ]
 
@@ -72,8 +72,8 @@ ENV FRANKENPHP_CONFIG="import worker.Caddyfile"
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-COPY --link frankenphp/conf.d/app.prod.ini $PHP_INI_DIR/conf.d/
-COPY --link frankenphp/worker.Caddyfile /etc/caddy/worker.Caddyfile
+COPY --link ./apps/frankenphp-api/conf.d/app.prod.ini $PHP_INI_DIR/conf.d/
+COPY --link ./apps/frankenphp-api/worker.Caddyfile /etc/caddy/worker.Caddyfile
 
 # prevent the reinstallation of vendors at every changes in the source code
 COPY --link composer.* symfony.* ./

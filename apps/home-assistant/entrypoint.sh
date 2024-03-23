@@ -16,6 +16,6 @@ if [[ "${HASS_USING_GIT_CONFIG}" == "true" ]]; then
 fi
 
 exec \
-    /usr/bin/hass \
+    /usr/local/bin/hass \
         --config /config \
         "$@"
