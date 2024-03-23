@@ -3,4 +3,4 @@ version=$(curl -sX GET "https://api.github.com/repos/dunglas/frankenphp/releases
 version="${version#*v}"
 version="${version#*release-}"
 #printf "%s" "${version}"
-printf "%s" "1.1.1-php8.3.4"
+printf "%s" "1.1.1-php8.3-alpine"
