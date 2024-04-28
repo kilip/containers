@@ -21,12 +21,11 @@ FROM frankenphp_upstream AS frankenphp_base
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN apk add --no-cache --virtual \
 	acl \
 	file \
 	gettext \
-	git \
-	&& rm -rf /var/lib/apt/lists/*
+	git
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
