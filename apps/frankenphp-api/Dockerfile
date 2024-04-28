@@ -8,7 +8,7 @@ ARG CHANNEL
 
 
 # Versions
-FROM dunglas/frankenphp:${VERSION} AS frankenphp_upstream
+FROM dunglas/frankenphp:${VERSION}-alpine AS frankenphp_upstream
 
 
 # The different stages of this Dockerfile are meant to be built into separate images
