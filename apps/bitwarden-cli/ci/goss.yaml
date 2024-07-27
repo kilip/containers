@@ -1,0 +1,4 @@
+---
+file:
+  /entrypoint.sh:
+    exists: true
