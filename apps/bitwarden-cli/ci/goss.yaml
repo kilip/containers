@@ -1,8 +1,0 @@
----
-process:
-  bw:
-    running: true
-
-port:
-  tcp:8087:
-    listening: true
