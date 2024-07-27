@@ -12,6 +12,4 @@ RUN rm *.zip
 
 COPY ./apps/bitwarden-cli/entrypoint.sh /
 
-EXPOSE 8087
-
 CMD ["/entrypoint.sh"]
