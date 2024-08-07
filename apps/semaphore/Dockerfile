@@ -2,12 +2,8 @@ ARG VERSION
 ARG TARGETPLATFORM
 ARG CHANNEL
 
+FROM ghcr.io/getsops/sops:v3.9.0-alpine AS base_sops
+
 FROM semaphoreui/semaphore:${VERSION:-v2.10.22}
 
-USER root
-
-RUN apk update && \
-  apk add --no-cache --virtual \
-	  sops
-
-USER 1001
+COPY --from=base_sops /usr/local/bin/sops /usr/local/bin/

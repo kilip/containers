@@ -1,9 +1,11 @@
 ---
-package:
-  sops:
-    installed: true
+file:
+  /usr/local/bin/sops:
+    exists: true
 
 command:
+  sops --version:
+    exit-status: 0
   semaphore:
     exit-status: 0
     timeout: 10000
