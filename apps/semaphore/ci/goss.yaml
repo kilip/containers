@@ -1,0 +1,9 @@
+---
+package:
+  sops:
+    installed: true
+
+command:
+  semaphore:
+    exit-status: 0
+    timeout: 10000
