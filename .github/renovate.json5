@@ -1,35 +1,50 @@
 {
-  "extends": [
-    "config:base",
-    "docker:enableMajor",
-    ":disableRateLimiting",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    ":automergeDigest"
+  extends: [
+    'config:recommended',
+    'docker:enableMajor',
+    ':disableRateLimiting',
+    ':dependencyDashboard',
+    ':semanticCommits',
+    ':automergeDigest',
   ],
-  "platform": "github",
-  "repositories": ["kilip/containers"],
-  "onboarding": false,
-  "requireConfig": "optional",
-  "username": "doyobot[bot]",
-  "gitAuthor": "doyobot <132103405+doyobot[bot]@users.noreply.github.com>",
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "suppressNotifications": ["prIgnoreNotification"],
-  "commitBodyTable": true,
-  "packageRules": [
+  platform: 'github',
+  repositories: [
+    'kilip/containers',
+  ],
+  onboarding: false,
+  requireConfig: 'optional',
+  username: 'doyobot[bot]',
+  gitAuthor: 'doyobot <132103405+doyobot[bot]@users.noreply.github.com>',
+  dependencyDashboardTitle: 'Renovate Dashboard 🤖',
+  suppressNotifications: [
+    'prIgnoreNotification',
+  ],
+  commitBodyTable: true,
+  packageRules: [
     {
-      "description": "Auto-merge Github Actions",
-      "matchDatasources": ["github-tags"],
-      "automerge": true,
-      "automergeType": "branch",
-      "ignoreTests": true,
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchPackagePatterns": ["renovatebot/github-action"]
+      description: 'Auto-merge Github Actions',
+      matchDatasources: [
+        'github-tags',
+      ],
+      automerge: true,
+      automergeType: 'branch',
+      ignoreTests: true,
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+      ],
+      matchPackageNames: [
+        '/renovatebot/github-action/',
+      ],
     },
     {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["digest"],
-      "commitMessagePrefix": "📣 "
-    }
-  ]
+      matchDatasources: [
+        'docker',
+      ],
+      matchUpdateTypes: [
+        'digest',
+      ],
+      commitMessagePrefix: '📣 ',
+    },
+  ],
 }
