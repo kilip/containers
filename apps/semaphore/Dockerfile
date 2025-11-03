@@ -2,7 +2,7 @@ ARG VERSION
 ARG TARGETPLATFORM
 ARG CHANNEL
 
-FROM ghcr.io/getsops/sops:v3.10.2-alpine AS base_sops
+FROM ghcr.io/getsops/sops:v3.11.0-alpine AS base_sops
 
 FROM semaphoreui/semaphore:${VERSION:-v2.10.22}
 
